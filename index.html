@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Carros</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold mb-6">Dashboard de Carros</h1>
+
+  <!-- Gráfico -->
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <canvas id="carChart" width="400" height="200"></canvas>
+  </div>
+
+  <!-- Busca FIPE -->
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <h2 class="text-xl font-bold mb-4">Buscar Carros (FIPE)</h2>
+    <div class="flex gap-2">
+      <input type="text" id="searchCar" placeholder="Digite o nome do carro" class="border p-2 rounded flex-grow">
+      <button onclick="searchCars()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Buscar</button>
+    </div>
+    <div id="searchResults" class="mt-4 space-y-2"></div>
+  </div>
+
+  <!-- Formulário CRUD -->
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <h2 class="text-xl font-bold mb-4">Gerenciar Carros</h2>
+    <form id="carForm" class="flex flex-col gap-2">
+      <input type="text" id="carName" placeholder="Nome do Carro" class="border p-2 rounded" required>
+      <input type="text" id="carBrand" placeholder="Marca" class="border p-2 rounded" required>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Adicionar</button>
+    </form>
+  </div>
+
+  <!-- Lista de Carros -->
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <h2 class="text-xl font-bold mb-4">Lista de Carros</h2>
+    <ul id="carList" class="space-y-2"></ul>
+  </div>
+
+  <!-- Curiosidade Automotiva -->
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="text-xl font-bold mb-4">Curiosidade Automotiva</h2>
+    <p id="carFact" class="italic"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
